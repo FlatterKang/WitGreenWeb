@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.witgreen.iot.dao.EquimentDao">
+    <select id="findEquimentByUserId" resultType="com.witgreen.iot.bean.Equiment">
+    SELECT equiment.id, equiment.name, equiment.protocol, equiment.add_time, equiment.user_id FROM equiment join user ON equiment.user_id = user.id WHERE user.id= #{id}
+    </select>
+
+</mapper>
